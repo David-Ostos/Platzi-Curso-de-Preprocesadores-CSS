@@ -9,6 +9,9 @@
 @fuente2: 'Oswald','sans-serif';
 @fuente-base: 18px;
 
+//variable Dark mode
+@dark-mode: true;
+
 //mixins
 .sombra-caja{
   box-shadow: 0 5px 15px 0 fade(@color-primario, 50%);
@@ -23,14 +26,42 @@
   line-height: @font-size + 10%;
 }
 
+//mixins Dark mode
+.dark() when (@dark-mode = true){
+  background-color: @color-primario;
+  color: @color-claro;
+  .intro{
+    background-color: @color-secundario;
+  }
+  .articulo--principal{
+    h2{
+      color: @color-secundario
+    }
+  }
+  .caja{
+    &__contenido{
+      background-color: @color-secundario;
+    }
+    span{
+      color: fade(@color-claro, 50%);
+    }
+    a{
+      color: fade(@color-claro, 50%);
+    }
+  }
+
+}
+
 *{
   box-sizing: border-box;
 }
 body{
   margin: 0;
+  padding: 2rem 0;
   font-family: @fuente1;
   color: @color-primario;
-  .fuente(@fuente-base)
+  .fuente(@fuente-base);
+  .dark();
 }
 
 h1,h2,h3{
