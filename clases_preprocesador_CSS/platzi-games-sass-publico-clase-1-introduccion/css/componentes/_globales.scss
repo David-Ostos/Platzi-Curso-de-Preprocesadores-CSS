@@ -8,9 +8,13 @@ $color-claro: #fff;
 $color-secundario: #8841da;
 $color-variacion: #3f579a;
 
+//variable Dark mode
+$dark-switch : 'true';
+
+
 //mixins
 @mixin caja {
-	//width: 50%;
+	width: 50%;
 	border-radius: 20px;
 	box-shadow: 0px 20px 33px 0px rgba(0,0,0,0.50);
 	color: $color-primario;
@@ -22,6 +26,39 @@ $color-variacion: #3f579a;
 	} @else {
 		font-family: $fuente2;
 		text-transform: uppercase;
+	}
+}
+
+@mixin dark{
+	@if $dark-switch=='true'{
+		.perfil{
+			background: #fff;
+			&__avatar{
+				border-radius: 2em
+			}
+			&__nombre{
+				color: $color-secundario;
+			}
+			&__titulo{
+				color: $color-variacion;
+			}
+			&__boton{
+				background-color: $color-primario;
+				color: $color-claro;
+			}
+		}
+		.articulos{
+			background-color: $color-primario;
+		}
+		
+		.articulo{
+			&__titulo{
+				color: $color-claro
+			}
+			&__descripcion{
+				color: $color-claro;
+			}
+		}
 	}
 }
 
