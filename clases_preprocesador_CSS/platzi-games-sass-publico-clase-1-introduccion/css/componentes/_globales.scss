@@ -10,7 +10,7 @@ $color-variacion: #3f579a;
 
 //mixins
 @mixin caja {
-	width: 50%;
+	//width: 50%;
 	border-radius: 20px;
 	box-shadow: 0px 20px 33px 0px rgba(0,0,0,0.50);
 	color: $color-primario;
@@ -49,5 +49,5 @@ body{
 main{
 	display: flex;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 }
