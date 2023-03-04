@@ -19,7 +19,6 @@
 }
 .nav--social{
   margin-left: auto;
-  }
   ul{
     display: flex;
     padding-top: 35px;
@@ -33,3 +32,4 @@
     color: $color-claro;
     @include titulos($Fuente2)
   }
+}
