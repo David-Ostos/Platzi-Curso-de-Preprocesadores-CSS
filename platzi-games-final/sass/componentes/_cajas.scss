@@ -11,6 +11,9 @@
 	&__contenido {
 		padding: 25px;
 		background-color: $color-claro;		
+		h3{
+			height: 60px;
+		}
 	}
 	&__categoria {
 		color: $color-secundario;
