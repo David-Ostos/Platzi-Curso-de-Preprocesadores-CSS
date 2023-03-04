@@ -6,7 +6,7 @@
   background-color: $color-primario
 }
 .nav--footer ul{
-  display: flex;
+  display: none;
   padding-top: 35px;
   li{
     list-style: none;
@@ -16,12 +16,18 @@
     color: $color-claro;
     @include titulos($Fuente2);
   }
+  @include media(desktop-s){
+    display: flex;
+  }
 }
 .nav--social{
   margin-left: auto;
   ul{
-    display: flex;
+    display: none;
     padding-top: 35px;
+    @include media(desktop-s){
+      display: flex;
+    }
   }
   li{
     list-style: none;
