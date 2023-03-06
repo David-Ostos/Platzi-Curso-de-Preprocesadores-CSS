@@ -1,0 +1,78 @@
+//variables
+fuente1 = 'Lato',sans-serif
+fuente2 = 'Oswald',sans-serif
+color-primario = #333333
+color-secundario = #8841da
+color-claro = #ffffff
+
+//mixins
+contenedor()
+	display: flex
+	width: 96%
+	margin: 0 auto
+	padding: 30px 0
+
+caja-sombra()
+	background-color: color-claro
+	box-shadow: 0px 20px 33px 0px rgba(0,0,0,0.40)
+
+//funciones
+opacidad(color, cantidad)
+	alpha(color, cantidad)
+
+//loops
+for header in 3 2 1
+	h{header}
+		font-size: 35px - (5*header)
+		margin: 0
+
+//condicionales
+titulos(fuente)
+	if(fuente == fuente1)
+		font-family: fuente1
+	else
+		font-family: fuente2
+		font-weight: 600
+		text-transform: uppercase
+
+//Dark mode
+dark()
+	body
+		background-color: color-primario
+	.buscador
+		&__input
+			background-color: color-primario
+	.encabezado--con-filtros
+		background-color: color-primario
+		h2
+			color: color-claro
+		.filtros
+			background-color: color-secundario
+			color: color-claro
+			a
+				color: color-claro
+
+	.caja
+		&__contenido
+			background-color: color-secundario
+			color: color-claro
+			span
+				color: opacidad(color-claro, .50)
+
+	.estadistica--articulos
+		background-color: color-primario
+		border-top: 1px solid opacidad(color-claro, .50)
+		ul
+			li
+				color: opacidad(color-claro, .50)
+
+
+//general
+*
+	box-sizing: border-box
+
+body
+	margin: 0
+	color: color-primario
+	titulos(fuente1)
+
