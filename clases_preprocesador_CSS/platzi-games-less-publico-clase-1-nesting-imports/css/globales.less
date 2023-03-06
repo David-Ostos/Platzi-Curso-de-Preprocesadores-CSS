@@ -10,11 +10,14 @@
 @fuente-base: 18px;
 
 //variable Dark mode
-@dark-mode: true;
+ @dark-mode: true; 
 
 //mixins
 .sombra-caja{
   box-shadow: 0 5px 15px 0 fade(@color-primario, 50%);
+}
+.sombra-caja-dark{
+  box-shadow: 0 5px 15px 0 fade(#000000, 50%);
 }
 .Oswald{
   font-family: @fuente2;
@@ -27,11 +30,12 @@
 }
 
 //mixins Dark mode
-.dark() when (@dark-mode = true){
+ .dark() when (@dark-mode = true){
   background-color: @color-primario;
   color: @color-claro;
   .intro{
     background-color: @color-secundario;
+    .sombra-caja-dark;
   }
   .articulo--principal{
     h2{
@@ -39,6 +43,7 @@
     }
   }
   .caja{
+    .sombra-caja-dark;
     &__contenido{
       background-color: @color-secundario;
     }
@@ -50,7 +55,7 @@
     }
   }
 
-}
+} 
 
 *{
   box-sizing: border-box;
